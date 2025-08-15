@@ -4,6 +4,7 @@ require_once 'conexao.php';
 
 if(!isset($_SESSION['usuario'])){
     header("Location:login.php");
+    exit();
 }
 
 //Obtendo o nome do perfil do usuario logado
