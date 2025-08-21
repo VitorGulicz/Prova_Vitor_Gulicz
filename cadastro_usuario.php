@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require_once 'conexao.php';
+require_once 'menudrop.php';
 
 //Verifica se o usuario tem permissão
 //supondo que o perfil 1 seja o ADM
