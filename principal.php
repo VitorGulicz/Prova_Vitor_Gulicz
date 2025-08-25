@@ -79,5 +79,6 @@ $opcoes_menu = $permissoes[$id_perfil];
     <?php endforeach;?>
     </ul>
 </nav>
+<adress><h2>Vitor Gulicz | Senai Norte </h2></adress>
 </body>
 </html>

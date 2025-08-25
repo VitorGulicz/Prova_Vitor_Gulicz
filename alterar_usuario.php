@@ -36,6 +36,26 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         echo "<script>alert('Usuário não encontrado!');</script>";
     }
 }
+    } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+        if (!empty($_GET['id'])) {
+            $busca = trim($_GET["id"]);
+
+        if(is_numeric($busca)) {
+            $sql = "SELECT * FROM usuario WHERE id_usuario = :busca";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':busca' ,$busca,PDO::PARAM_INT);
+        } else {
+            $sql = "SELECT * FROM usuario WHERE nome LIKE :busca_nome";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':busca_nome', "%$busca%", PDO::PARAM_STR);
+        }
+        $stmt->execute();
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if(!$usuario){
+            echo "<script>alert('Usuário não encontrado!');</script>";
+        }
+    }
 }
 ?>
 
@@ -48,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
     <link rel="stylesheet" href="styles.css">
 <!--Certifique-se de que o Java script está sendo carregado corretamente-->
 <script src="scripts.js"></script>
+<script src="mascara.js"></script>
 </head>
 <body>
 <h2>Alterar Usuários</h2>
@@ -65,14 +86,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
             <input type="hidden" name="id_usuario" value="<?=htmlspecialchars($usuario['id_usuario'])?>">
 
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required>
+            <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>" required onkeypress="mascara(this,nome1)">
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>" required>
 
             <label for="id_perfil">Perfil:</label>
             <select id="id_perfil" name="id_perfil">
-                <option value="1"<?=$usuario['id_perfil'] == 1 ? 'selected': '' ?>>Adiministrador</option>
+                <option value="1"<?=$usuario['id_perfil'] == 1 ? 'selected': '' ?>>Administrador</option>
                 <option value="2"<?=$usuario['id_perfil'] == 2 ? 'selected': '' ?>>Secretaria</option>
                 <option value="3"<?=$usuario['id_perfil'] == 3 ? 'selected': '' ?>>Almoxarife</option>
                 <option value="4"<?=$usuario['id_perfil'] == 4 ? 'selected': '' ?>>Cliente</option>

@@ -37,12 +37,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="mascara.js"></script>
 </head>
 <body>
     <h2>Cadastrar Usuario</h2>
     <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" required onkeypress="mascara(this,nome1)">
 
         <label for="email">Email: </label>
         <input type="email" id="email" name="email" required>
