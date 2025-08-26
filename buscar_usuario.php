@@ -44,6 +44,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tabela.css">
 </head>
 <body>
     <h2>Lista de usuários</h2>
