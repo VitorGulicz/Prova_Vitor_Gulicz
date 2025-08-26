@@ -38,6 +38,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <title>Cadastrar Usuario</title>
     <link rel="stylesheet" href="styles.css">
     <script src="mascara.js"></script>
+    <link rel="stylesheet" href="tabela.css">
 </head>
 <body>
     <h2>Cadastrar Usuario</h2>
@@ -61,6 +62,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <button type="submit">Salvar</button>
         <button type="submit">Cancelar</button>
 </form>
-        <a href="principal.php">Voltar</a>
+    <a href="principal.php" class="voltar">Voltar</a>
     </body>
 </html>

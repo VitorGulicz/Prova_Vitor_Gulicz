@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 <!--Certifique-se de que o Java script está sendo carregado corretamente-->
 <script src="scripts.js"></script>
 <script src="mascara.js"></script>
+<link rel="stylesheet" href="tabela.css">
 </head>
 <body>
 <h2>Alterar Usuários</h2>
@@ -112,6 +113,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         </form>
         <?php endif; ?>
         
-        <a href="principal.php">Voltar</a>
+        <a href="principal.php" class="voltar">Voltar</a>
 </body>
 </html>

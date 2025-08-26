@@ -42,6 +42,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tabela.css">
 </head>
 <body>
     <h2>Excluir Usuario</h2>
@@ -71,6 +72,6 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
         <?php else: ?>
             <p>Nenhum usuario encontrado</p>
         <?php endif;?>
-        <a href="principal.php">Voltar</a>
+        <a href="principal.php" class="voltar">Voltar</a>
 </body>
 </html>
