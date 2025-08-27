@@ -59,8 +59,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <option value="3">Almoxarife</option>
             <option value="4">Cliente</option>
 </select>
-        <button type="submit">Salvar</button>
-        <button type="submit">Cancelar</button>
+        <button type="submit" class="cadastrar">Cadastrar</button>
+        <button type="submit" class="excluir">Cancelar</button>
 </form>
     <a href="principal.php" class="voltar">Voltar</a>
     </body>
