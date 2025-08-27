@@ -13,17 +13,17 @@ if($_SESSION['perfil']!= 1){
 //INICIALIZA AS VARIAVEIS
 $usuario = null;
 
-//Busca todos os usuario cadastrados em ordem alfabetica
+//Busca todos os fornecedor cadastrados em ordem alfabetica
 $sql="SELECT * from fornecedor order by nome_fornecedor ASC";
 $stmt = $pdo->prepare($sql);
 $stmt ->execute();
 $fornecedores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//SE um id for passado via get, exclui o usuario
+//SE um id for passado via get, exclui o fornecedor
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
     $id_fornecedor = $_GET['id'];
 
-    //Exclui o usuaroi do banco de dados
+    //Exclui o fornecedor do banco de dados
     $sql = "DELETE FROM fornecedor WHERE id_fornecedor = :id";
     $stmt=$pdo->prepare($sql);
     $stmt->bindparam(':id',$id_fornecedor,PDO::PARAM_INT);

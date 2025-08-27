@@ -1,7 +1,7 @@
-/* Estilo geral da tabela */
+
 table {
-    width: 100%;              /* tabela ocupa toda largura do container */
-    border-collapse: collapse; /* remove espaços entre bordas */
+    width: 100%;               
+    border-collapse: collapse;
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: left;
@@ -9,25 +9,23 @@ table {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
-  /* Estilo para as células (td e th) */
+
   th, td {
     padding: 12px 15px;
     border: 1px solid #ddd;
   }
   
-  /* Cabeçalho */
+
   th {
     background-color: #444;
     color: white;
     font-weight: bold;
   }
   
-  /* Linhas pares com cor de fundo diferente */
   tbody tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
-  /* Efeito hover nas linhas */
   tbody tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
@@ -36,7 +34,7 @@ table {
   .excluir{
         width: 80%;
         padding: 10px;
-        background-color: #ff0800; /* Azul bonito */
+        background-color: #ff0800; 
         color: white;
         border: none;
         border-radius: 5px;
@@ -49,9 +47,21 @@ table {
 
       display: inline-block;
       padding: 10px 20px;
-      background-color: #007BFF;  /* Azul */
+      background-color: #007BFF;
       color: white;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+}
+
+  .cadastrar{
+    width: 80%;
+    padding: 10px;
+    background-color: #1f943c; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }

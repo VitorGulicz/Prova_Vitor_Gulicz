@@ -60,8 +60,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <label for="contato">Contato do Fornecedor: </label>
         <input type="text" id="contato" name="contato" required onkeypress="mascara(this,nome1)">
 
-        <button type="submit">Salvar</button>
-        <button type="submit">Cancelar</button>
+        <button type="submit" class="cadastrar">Cadastrar</button>
+        <button type="submit" class="excluir">Cancelar</button>
 </form>
     <a href="principal.php" class="voltar">Voltar</a>
     </body>
