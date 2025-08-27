@@ -18,14 +18,16 @@ if($_SERVER['REQUEST_METHOD'] =="POST"){
     $contato = $_POST['contato'];
 
     //Atualiza os dados do usuario
-        $sql = "UPDATE fornecedor SET nome_fornecedor =:nome_fornecedor, endereco =: endereco, telefone =: telefone, email =: email, contato =: contato WHERE id_fornecedor = :id";
+        $sql = "UPDATE fornecedor SET nome_fornecedor = :nome_fornecedor, endereco = :endereco, telefone = :telefone, email = :email, contato = :contato WHERE id_fornecedor = :id";
         $stmt = $pdo->prepare($sql);
     
+     
     $stmt->bindparam(':nome_fornecedor', $nome_fornecedor);
     $stmt->bindparam(':endereco', $endereco);
     $stmt->bindparam(':telefone', $telefone);
     $stmt->bindparam(':email', $email);
     $stmt->bindparam(':contato', $contato);
+    $stmt->bindparam(':id', $id_fornecedor);   
 
 
     if($stmt->execute()){

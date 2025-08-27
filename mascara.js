@@ -16,3 +16,5 @@ function telefone1(v) {
 function nome1(v) {
     return v.replace(/\d/g, "");
 }
+
+
